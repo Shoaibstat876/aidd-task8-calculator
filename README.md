@@ -57,8 +57,7 @@ The goal of this project is to build a simple and reliable calculator using Pyth
 ## ✨ Specify Phase
 
 ### **Prompt:**  
-Write clear specifications for a Python CLI calculator using SpecKitPlus.  
-Define the inputs, outputs, operations, rules, constraints, and error-handling requirements.
+Write clear specifications for a Python CLI calculator using SpecKitPlus.
 
 ---
 
@@ -67,136 +66,145 @@ Define the inputs, outputs, operations, rules, constraints, and error-handling r
 ## 📌 Specification — Calculator Requirements
 
 ### **1. Functional Requirements**
-- The program must accept **two numeric inputs** from the user.  
-- The program must allow the user to choose **one operation**:
-  - Addition  
-  - Subtraction  
-  - Multiplication  
-  - Division  
-- The program must compute the result based on the selected operation.  
-- The program must display the final output clearly in the terminal.
-
----
+- Accept two numeric inputs  
+- Allow user to choose an operation  
+- Perform the calculation  
+- Display clean output  
 
 ### **2. Input Requirements**
-- Accept integers and decimal numbers.  
-- Reject non-numeric input with a friendly message.  
-- Request input again if the user enters invalid data.
-
----
+- Accept decimals  
+- Reject non-numeric input  
+- Re-ask for invalid values  
 
 ### **3. Operation Rules**
-- **Addition:** num1 + num2  
-- **Subtraction:** num1 − num2  
-- **Multiplication:** num1 × num2  
-- **Division:** num1 ÷ num2  
-- For division, if num2 = 0 → show “Error: Cannot divide by zero.”
-
----
+- Addition, Subtraction, Multiplication, Division  
+- Protect division with zero  
 
 ### **4. Output Requirements**
-- Show the full expression and result, for example:  
-  - `Result: 7 + 3 = 10`  
-  - `Result: 9 / 3 = 3.0`
-- Output must always appear on a new line with clean formatting.
+- Print formatted result:  
+  `Result: 7 + 3 = 10`
 
----
+### **5. Error Handling**
+- Non-numeric inputs  
+- Invalid menu choice  
+- Division by zero  
 
-### **5. Error Handling Requirements**
-- Handle division by zero gracefully.  
-- Handle invalid numeric input.  
-- Handle invalid operation selection.  
-- Program must not crash for any wrong input.
-
----
-
-### **6. User Experience Requirements**
-- The program should be simple, fast, and easy to use.  
-- Messages must be clear and beginner-friendly.  
-- After displaying the result, the program may exit normally.
-
----
-
-### **7. Success Conditions**
-- All four operations work correctly.  
-- All invalid inputs are handled safely.  
-- Output is readable and consistent.  
-- Specification matches implementation in later phases.
+### **6. User Experience**
+- Fast, simple, readable  
 
 ---
 
 ## ✨ Plan Phase
 
 ### **Prompt:**  
-Create a simple and clear technical plan for a Python CLI calculator using SpecKitPlus.  
-Explain the architecture, program flow, calculations, and how input/output will work.
+Create a technical plan for the calculator.
 
 ---
 
 ### **Claude Output:**
 
-## 🛠️ Technical Plan — Calculator Architecture & Flow
+## 🛠️ Technical Plan
 
-### **1. Program Structure**
-The calculator will follow a linear, step-by-step structure:
-1. Ask the user for the first number  
-2. Ask the user for the second number  
-3. Show a menu of operations ( + , − , × , ÷ )  
-4. Perform the chosen calculation  
-5. Display the result  
-6. Exit safely
+### **1. Flow**
+1. Ask for num1  
+2. Ask for num2  
+3. Show menu  
+4. Perform operation  
+5. Display result  
 
----
+### **2. Components**
+- Input handler  
+- Operation selector  
+- Four operation functions  
+- Output formatter  
 
-### **2. Core Components**
-- **Input Handler**  
-  Reads two values from the user and converts them to numbers.
+### **3. Error Handling**
+- Invalid numbers  
+- Invalid menu  
+- Division by zero  
 
-- **Operation Selector**  
-  Lets the user choose between addition, subtraction, multiplication, and division.
-
-- **Calculator Functions**  
-  Four small functions, one for each operation:
-  - `add(a, b)`  
-  - `subtract(a, b)`  
-  - `multiply(a, b)`  
-  - `divide(a, b)` (with zero-check)
-
-- **Output Formatter**  
-  Displays the result in a clear, readable format.
+### **4. Testing**
+- 10 + 5 = 15  
+- 20 - 4 = 16  
+- 6 * 7 = 42  
+- 12 / 3 = 4  
 
 ---
 
-### **3. Calculation Flow**
-1. Convert both inputs to `float`.  
-2. Match the user’s choice to the correct function.  
-3. Perform the selected operation.  
-4. Handle any errors (invalid input or division by zero).  
-5. Print the full expression and result.
+## ✨ Tasks Phase
+
+### **Prompt:**  
+Break the calculator into tasks.
 
 ---
 
-### **4. Error Handling Plan**
-- If the user enters a non-number → show a friendly error message.  
-- If the user chooses an invalid operation → show a message and stop.  
-- If division by zero is attempted → block it and show “Error: Cannot divide by zero.”  
-- The program must never crash due to bad input.
+### **Claude Output:**
+
+## ✅ To-Do Checklist
+
+### **Setup**
+- Create `calculator.py`  
+- Print “Calculator Ready”  
+
+### **Input**
+- Ask for two numbers  
+- Convert to float  
+- Validate errors  
+
+### **Operations**
+- Show menu  
+- Validate choice  
+
+### **Logic**
+- Implement: add, subtract, multiply, divide  
+- Protect division  
+
+### **Output**
+- Print formatted result  
+
+### **Testing**
+- Run all four operations  
+- Save screenshots  
+
+### **Documentation**
+- Update README  
+- Add final screenshots  
 
 ---
 
-### **5. Testing Plan**
-The calculator will be tested using four sample operations:
-- `10 + 5 = 15`  
-- `20 - 4 = 16`  
-- `6 * 7 = 42`  
-- `12 / 3 = 4`  
+## ✨ Implement Phase
 
-These test results will be captured as screenshots for submission.
+### **Prompt:**  
+Write the final implementation following the previous phases.
 
 ---
 
-### **6. Output Format**
-The final result will follow this template:
+### **Claude Output (Summary Only):**  
+The complete working calculator code is provided separately in `calculator.py`.  
+It includes:  
+- Input handling  
+- Operation menu  
+- Four calculation functions  
+- Error checking  
+- Final result printing  
 
-```text
-Result: <num1> <operator> <num2> = <answer>
+The implementation strictly follows the Constitution, Specify, Plan, and Tasks phases.
+
+---
+
+## ✨ Final Testing Screenshots
+
+Below are the results of testing all four operations.  
+Screenshots are provided as required.
+
+### 💫 Addition Test  
+File: `screenshots/addition.png`
+
+### 💫 Subtraction Test  
+File: `screenshots/subtraction.png`
+
+### 💫 Multiplication Test  
+File: `screenshots/multiplication.png`
+
+### 💫 Division Test  
+File: `screenshots/division.png`
